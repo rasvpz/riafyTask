@@ -53,7 +53,7 @@ const {searchData} = useSelector(state=>{
 <tbody>   
  {searchData.map((data,index)=>{
   return<tr key={data._id}>
-  <td>{index+1}</td>
+  <td className='tbFont'>{index+1}</td>
           <td>{data.Name}</td>
           <td>{data.ROCE}</td>
           <td>{data.ROEPreviousAnnum}</td>
