@@ -37,7 +37,7 @@ const {searchData} = useSelector(state=>{
       </InputGroup>
 
 {searchData &&<div className='tdDiv table-responsive'>
-<h4>Tech mahindra Ltd</h4><br />
+<h5>Tech mahindra Ltd</h5>
       <table className="table table-striped table-hover table-responsive">
       
         <tr>

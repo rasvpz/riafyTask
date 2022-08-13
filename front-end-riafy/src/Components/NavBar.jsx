@@ -10,12 +10,12 @@ function navBar() {
     
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home" className="colorDark"><h4>Store</h4></Navbar.Brand>
+        <Navbar.Brand href="#home" className="colorDark"><h5>Store</h5></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features" className="colorDark">Home</Nav.Link>
-            <Nav.Link href="#pricing" className="colorDark">About</Nav.Link>
+            <Nav.Link href="#features" className="colorDark"></Nav.Link>
+            <Nav.Link href="#pricing" className="colorDark"></Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets" className="colorDark">Login</Nav.Link>
