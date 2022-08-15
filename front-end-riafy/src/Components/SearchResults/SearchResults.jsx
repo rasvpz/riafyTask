@@ -17,7 +17,7 @@ const {searchData} = useSelector(state=>{
     dispatch(SearchCompanyAction(e.target.value))
   }
   return (
-    <div className="container tblContainer">
+<div className="container tblContainer">
       <Container className='bdBg'>
     <Form.Label htmlFor="inputPassword5">
     <h2>The esiest way to buy <br /> and sell stocks <br /><br /></h2>
@@ -36,39 +36,54 @@ const {searchData} = useSelector(state=>{
         />
       </InputGroup>
 
-{searchData &&<div className='tdDiv table-responsive'>
-<h5>Tech mahindra Ltd</h5>
-      <table className="table table-striped table-hover table-responsive">
+{
+  searchData &&
+
+<div className='tdDiv table-responsive'>
+      <h5>Tech mahindra Ltd</h5>  
+    {searchData.map((data,index)=>{
+      return <table key={data._id} className="table table-striped table-hover table-responsive">
+        <tbody> 
+
+          <tr>
+          <td width="5%"><strong> S.NO </strong></td>
+          <td width="15%" className='tbFont'>{index+1}</td>
+          <td width="5%"><strong> ROE </strong></td>
+          <td width="15%" className='tbFont'>{data.ROEPreviousAnnum}</td>
+          <td width="5%"><strong> ROCE </strong></td>
+          <td width="15%" className='tbFont'>{data.ROCE}</td> 
+          </tr>
+
+          <tr>
+          <td width="5%"><strong> Name </strong></td>
+          <td width="15%" className='tbFont'>{data.Name}</td>
+          <td width="5%"><strong> EPS </strong></td>
+          <td width="15%" className='tbFont'>{data.Reserves}</td>
+          <td width="5%"><strong> RESERVE </strong></td>
+          <td width="15%" className='tbFont'>{data.Debt}</td> 
+          </tr>
+
+          <tr>
+          <td width="5%"><strong> DEBT</strong></td>
+          <td width="15%" className='tbFont'>{data.DebtToEquity}</td>
+          <td width="5%"><strong> EQUITY </strong></td>
+          <td width="15%" className='tbFont'>{data.EPS}</td>
+          <td width="5%"></td>
+          <td width="15%"></td>
+          </tr>
+          
+          </tbody>
+          </table>
+      })
+              
+    }
+
+
+</div>
       
-        <tr>
-          <th>S.NO</th>
-          <th>NAME</th>
-          <th>ROCE</th>
-          <th>ROE</th>
-          <th>EQUITY</th>
-          <th>EPS</th>
-          <th>RESERVES</th>
-          <th>DEBT</th>
-          </tr>
-<tbody>   
- {searchData.map((data,index)=>{
-  return<tr key={data._id}>
-  <td className='tbFont'>{index+1}</td>
-          <td>{data.Name}</td>
-          <td>{data.ROCE}</td>
-          <td>{data.ROEPreviousAnnum}</td>
-          <td>{data.DebtToEquity}</td>
-          <td>{data.EPS}</td>
-          <td>{data.Reserves}</td>
-          <td>{data.Debt}</td>
-          </tr>
-        })
-        }
-        </tbody>
-      </table>
-      </div>}
+      }
       </Container>
-      </div>
+  </div>
   );
 }
 

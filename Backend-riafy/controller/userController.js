@@ -6,10 +6,6 @@ module.exports = {
         console.log(req.body,"sdfsdfsfsfdsdfsdfsdfsdfsdf");
         const {searchData} = req.body;
         var cursor = await companyModel.find({Name: { $regex: searchData, $options: "i" }})
-
-        console.log(cursor,"cursorcursorcursorcursor");
         res.json(cursor)
-
-
     })
 }

@@ -5,9 +5,7 @@ export const SearchCompanyAction =(searchData)=>async(dispatch, getState) => {
     try{
         dispatch({type:SEARCH_FIND_REQUEST})
         let {data} = await axios.post("api/searchPost",{searchData})
-
         dispatch({type:SEARCH_FIND_SUCCESS,payload:data})
-
     }catch(e){
         dispatch({type:SEARCH_FIND_ERR,payload:e})
 
